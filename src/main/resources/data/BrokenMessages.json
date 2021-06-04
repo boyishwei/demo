@@ -1,0 +1,45 @@
+[
+  {
+    "accountNumber": "1300218277",
+    "stockCode":"Ok",
+    "quantity": "288.120000",
+    "currency": "USD",
+    "price": "1234.56",
+    "broker": "B00123"
+  },
+  {
+    "tradeReference": "T00001",
+    "accountNumber": "",
+    "stockCode":"Ok",
+    "quantity": "288.120000",
+    "currency": "USD",
+    "price": "1234.56",
+    "broker": "B00123"
+  },
+  {
+    "tradeReference": "T00001",
+    "accountNumber": "1300218277",
+    "stockCode":"Ok",
+    "quantity": "288.120000",
+    "currency": "USD",
+    "price": "1234.56",
+    "broker": ""
+  },
+  {
+    "tradeReference": "T00001",
+    "accountNumber": "1300218277",
+    "stockCode":"Ok",
+    "quantity": "120000",
+    "currency": "USD",
+    "broker": "B00123"
+  },
+  {
+    "tradeReference": "T00001",
+    "accountNumber": "1300218277",
+    "stockCode":"Ok",
+    "quantity": "288.120000",
+    "currency": "USD",
+    "price": "1234.56",
+    "broker": "B00123"
+  }
+]
