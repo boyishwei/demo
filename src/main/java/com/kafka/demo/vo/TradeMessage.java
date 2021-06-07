@@ -31,8 +31,7 @@ public class TradeMessage {
    private String receivedTimeStamp;
 
    public String toString(){
-//      return "xxx"; //objectMapper.writeValueAsString(this);
-      ObjectMapper objectMapper = new ObjectMapper();
+//      ObjectMapper objectMapper = new ObjectMapper();
       String message = null;
       try {
          message = objectMapper.writeValueAsString(this);
