@@ -1,7 +1,11 @@
 package com.kafka.demo.utils;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.kafka.demo.service.KafKaProducerService;
 import com.kafka.demo.vo.TradeMessage;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -11,6 +15,10 @@ import java.time.ZoneOffset;
 
 @Slf4j
 public class MessageHelper {
+
+    @Autowired
+    ObjectMapper objectMapper;
+
     public static TradeMessage enrich(TradeMessage tradeMessage){
         BigDecimal quantity = new BigDecimal(tradeMessage.getQuantity());
         BigDecimal price = new BigDecimal(tradeMessage.getPrice());

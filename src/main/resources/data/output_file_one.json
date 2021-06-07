@@ -1,0 +1,21 @@
+[ {
+  "tradeReference" : "T00001",
+  "accountNumber" : "1300218277",
+  "stockCode" : "Ok",
+  "quantity" : "288.120000",
+  "currency" : "USD",
+  "price" : "1234.56",
+  "broker" : "B00123",
+  "amount" : null,
+  "receivedTimeStamp" : null
+}, {
+  "tradeReference" : "T00002",
+  "accountNumber" : "1300218277",
+  "stockCode" : "Ok",
+  "quantity" : "288.120000",
+  "currency" : "USD",
+  "price" : "1234.56",
+  "broker" : "B00123",
+  "amount" : null,
+  "receivedTimeStamp" : null
+} ]

@@ -1,6 +1,7 @@
 package com.kafka.demo.service;
 
 import com.kafka.demo.constant.AppConstants;
+import com.kafka.demo.vo.TradeMessage;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -21,4 +22,9 @@ public class KafKaProducerService
         return this.kafkaTemplate.send(AppConstants.TOPIC_NAME, message);
     }
 
+    public ListenableFuture<SendResult<String, String>> sendMessage(TradeMessage tradeMessage)
+    {
+        log.info(String.format("Message sent -> %s", tradeMessage));
+        return this.kafkaTemplate.send(AppConstants.TOPIC_NAME, tradeMessage.toString());
+    }
 }

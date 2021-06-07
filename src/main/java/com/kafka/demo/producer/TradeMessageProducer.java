@@ -7,10 +7,12 @@ import com.kafka.demo.utils.MessageHelper;
 import com.kafka.demo.vo.TradeMessage;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
+@Component
 public class TradeMessageProducer implements  Runnable {
     @Autowired
     JSONFileHandler jsonFileHandler;
@@ -24,13 +26,10 @@ public class TradeMessageProducer implements  Runnable {
     @SneakyThrows
     @Override
     public void run() {
-        while (true){
-            if(jsonFileHandler.getInputFile().exists()){
+        while (jsonFileHandler.getInputFile().canRead()){
+            if(jsonFileHandler.getInputFile().canRead()){
                 List<TradeMessage> messageList = jsonFileHandler.read();
-                List<TradeMessage> enrichedList = messageList.stream().filter(MessageHelper::validate).collect(Collectors.toList());
-                enrichedList.forEach(MessageHelper::enrich);
-                String messageString = objectMapper.writeValueAsString(enrichedList);
-                kafKaProducerService.sendMessage(messageString);
+                messageList.stream().filter(MessageHelper::validate).map(MessageHelper::enrich).forEach(kafKaProducerService::sendMessage);
                 jsonFileHandler.archive();
             }
             else
